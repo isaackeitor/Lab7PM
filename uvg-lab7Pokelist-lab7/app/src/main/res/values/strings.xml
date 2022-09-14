@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PokeList</string>
+    <string name="detail_front_title">Front</string>
+    <string name="detail_back_title">Back</string>
+    <string name="detail_front_shinny_title">Front Shinny</string>
+    <string name="detail_back_shinny_title">Back Shinny</string>
+</resources>

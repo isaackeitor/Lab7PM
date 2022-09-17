@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import gt.uvg.pokelist.databinding.FragmentMainBinding
+import gt.uvg.pokelist.repository.PokemonRepository
 
 
 class MainFragment: Fragment() {
@@ -25,11 +26,12 @@ class MainFragment: Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        val pokemonList = PokemonRepository().getPokemonList()
         recyclerView = binding.recyclerView
         // Sets the LayoutManager of the recyclerview
         // On the first run of the app, it will be LinearLayoutManager
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = PokemonListAdapter()
+        recyclerView.adapter = PokemonListAdapter(pokemonList)
 
     }
 

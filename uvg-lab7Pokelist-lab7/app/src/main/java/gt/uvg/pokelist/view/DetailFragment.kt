@@ -13,7 +13,7 @@ import gt.uvg.pokelist.repository.PokemonRepository
 
 class DetailFragment : Fragment() {
     companion object{
-        val PokemonID = "pokemonID"
+        const val PokemonID = "pokemonID"
     }
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
@@ -36,15 +36,15 @@ class DetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val pokemonList = PokemonRepository().getPokemonList()
-        val details = pokemonList.find{it.id == pokemonID}
+        val character = pokemonList.find{it.id == pokemonID}
         binding.textView.text= "Front"
-        Picasso.get().load(details!!.imageUrlFront).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView2)
+        //Picasso.get().load(character!!.imageUrlFront).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView2)
         binding.textView2.text= "Back"
-        Picasso.get().load(details!!.imageUrlBack).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView3)
+        //Picasso.get().load(character.imageUrlBack).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView3)
         binding.textView3.text= "Front Shiny"
-        Picasso.get().load(details!!.imageUrlShinnyFront).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView4)
+        //Picasso.get().load(character.imageUrlShinnyFront).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView4)
         binding.textView4.text= "Back Shiny"
-        Picasso.get().load(details!!.imageUrlShinnyBack).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView5)
+        //Picasso.get().load(character.imageUrlShinnyBack).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView5)
     }
 
     override fun onDestroyView() {

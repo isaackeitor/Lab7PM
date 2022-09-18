@@ -16,7 +16,11 @@ class PokemonRepository {
             Pokemon(7, "squirtle"),
             Pokemon(8 , "wartortle"),
             Pokemon(9, "blastoise"),
-            Pokemon(10,"caterpie")
+            Pokemon(10,"caterpie"),
+            Pokemon( 11, "metapod"),
+            Pokemon( 12, "butterfree"),
+            Pokemon( 13, "weedle"),
+            Pokemon( 14, "kakuna")
         )
     }
 }

@@ -3,6 +3,7 @@ package gt.uvg.pokelist.view
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import gt.uvg.pokelist.databinding.FragmentMainBinding
@@ -28,11 +29,9 @@ class MainFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val pokemonList = PokemonRepository().getPokemonList()
         recyclerView = binding.recyclerView
-        // Sets the LayoutManager of the recyclerview
-        // On the first run of the app, it will be LinearLayoutManager
         recyclerView.layoutManager = LinearLayoutManager(context)
+        //recyclerView.layoutManager = GridLayoutManager(context, 2)
         recyclerView.adapter = PokemonListAdapter(pokemonList)
-
     }
 
     override fun onDestroyView() {

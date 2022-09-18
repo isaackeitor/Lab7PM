@@ -11,11 +11,9 @@ import gt.uvg.pokelist.repository.PokemonRepository
 
 
 class MainFragment: Fragment() {
-
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
     private lateinit var recyclerView: RecyclerView
-
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -37,14 +37,10 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val pokemonList = PokemonRepository().getPokemonList()
         val character = pokemonList.find{it.id == pokemonId}
-        binding.textView.text= "Front"
         Picasso.get().load(character!!.imageUrlFront).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView2)
-        binding.textView2.text= "Back"
-        Picasso.get().load(character!!.imageUrlBack).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView3)
-        binding.textView3.text= "Front Shiny"
-        Picasso.get().load(character!!.imageUrlShinnyFront).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView4)
-        binding.textView4.text= "Back Shiny"
-        Picasso.get().load(character!!.imageUrlShinnyBack).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView5)
+        Picasso.get().load(character.imageUrlBack).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView3)
+        Picasso.get().load(character.imageUrlShinnyFront).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView4)
+        Picasso.get().load(character.imageUrlShinnyBack).placeholder(R.drawable.image_not_found).error(R.drawable.image_not_found).into(binding.imageView5)
     }
 
     override fun onDestroyView() {
